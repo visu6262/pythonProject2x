@@ -1,3 +1,4 @@
+#palindrom
 org_name = "1221"
 rev_name = ""
 for c in org_name:

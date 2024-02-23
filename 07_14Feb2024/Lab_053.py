@@ -2,7 +2,7 @@ def sum_two(a,b):
     return a+b
 p=sum_two(2,5)
 print(p)
-"""---------------"""
+"""----------------"""
 print("type2-------------")
 def sum(a=1,b=1,c=1):
     return a+b+c

@@ -7,7 +7,7 @@ make_pizza("onians","tomato","carreat")
 make_pizza("onians","tomato","carreat","butter")
 visu=make_pizza("onians","tomato","carreat","butter","sass","sweetcorn")
 
-"""--------------------------"""
+"""---------------------------"""
 print("type 2_____________")
 def make_pizza(*topings,base):
     print(topings,"Base is like:",base)

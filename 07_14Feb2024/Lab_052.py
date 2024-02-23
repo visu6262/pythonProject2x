@@ -13,7 +13,7 @@ def say_hello(name="visu"): #argument with defalt value: 'name=visu' is passing
     print("hi hello",name)
 say_hello("ram")
 say_hello()
-"""--------------------"""
+"""---------------------"""
 print("type4___________")
 def say_hello(name="visu",age=33):  #multiple argumment passing with defalt valus
     print("hello",name,age)

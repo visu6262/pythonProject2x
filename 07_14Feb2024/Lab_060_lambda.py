@@ -1,5 +1,4 @@
 # lambda
-
 d_sal=lambda sal:sal*2
 print(d_sal(100))
 

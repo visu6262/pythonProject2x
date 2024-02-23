@@ -1,4 +1,5 @@
 # str = input("Enter name witch u want to revers:")
+
 def revers_str(str):
     last_to_first = " "
     for c in str:
