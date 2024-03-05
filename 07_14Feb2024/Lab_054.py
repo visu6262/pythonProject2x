@@ -1,6 +1,6 @@
 *args
 # def printing_num_arguments(*args):
-    for i in args:
+    for i in *args:
         print(i,end=" ")
 printing_num_arguments(1)
 print('\n')
