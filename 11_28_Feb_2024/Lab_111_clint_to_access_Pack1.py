@@ -1,5 +1,5 @@
 import sys
-sys.path.append("C:/Users/91939/PycharmProjects/pythonProject2x/11_28Feb2024/pack1")
+sys.path.append("/11_28_Feb_2024/pack1")
 
 import display
 import show

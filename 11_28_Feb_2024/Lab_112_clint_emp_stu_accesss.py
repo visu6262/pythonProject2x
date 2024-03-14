@@ -1,6 +1,6 @@
 import sys
-sys.path.append("C:/Users/91939/PycharmProjects/pythonProject2x/11_28Feb2024/emp")
-sys.path.append("C:/Users/91939/PycharmProjects/pythonProject2x/11_28Feb2024/stu")
+sys.path.append("/11_28_Feb_2024/emp")
+sys.path.append("/11_28_Feb_2024/stu")
 
 import empless
 import students
