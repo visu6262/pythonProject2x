@@ -1,5 +1,5 @@
 import Lab_103_sample_print
-a=Lab_103_sample_print.display()
+a= Lab_103_sample_print.display()
 
 
 print('_____________')

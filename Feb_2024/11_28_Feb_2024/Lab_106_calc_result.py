@@ -1,12 +1,12 @@
 import Lab_105_calc
 
-addobj=Lab_105_calc.add(10,13)
+addobj= Lab_105_calc.add(10, 13)
 print(addobj)
 
-mulobj=Lab_105_calc.mul(10,15)
+mulobj= Lab_105_calc.mul(10, 15)
 print(mulobj)
 
-subobj=Lab_105_calc.sub(20,5)
+subobj= Lab_105_calc.sub(20, 5)
 print(subobj)
 
 print("----------------")

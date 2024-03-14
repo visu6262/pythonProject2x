@@ -1,10 +1,10 @@
 import Lab_107_class
 import Lab_109_class_calculater
-output=Lab_107_class.even_or_odd()
+output= Lab_107_class.even_or_odd()
 output.num(10)
 output.num(5)
 print("-----------------")
-result=Lab_109_class_calculater.calc()
+result= Lab_109_class_calculater.calc()
 print(result.add())
 print(result.sub())
 print(result.mul())
