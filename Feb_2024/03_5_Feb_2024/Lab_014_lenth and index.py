@@ -9,4 +9,4 @@ print(name[5])
 print(name[6])
 print(name[7])
 print(name[8])
-print("print ing -1 value is:",name[-1])     #index is [] in -ve number start from last -1
+print("printing -1 value is:",name[-1])     #index is [] in -ve number start from last -1
