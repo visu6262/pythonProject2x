@@ -4,7 +4,7 @@ import allure
 
 @allure.title("Token - Generate Token")
 @allure.description("Create new Token")
-def test_create_token():
+def create_token():
     base_url="https://restful-booker.herokuapp.com"
     path_url="/auth"
     token_url=base_url+path_url
@@ -34,7 +34,7 @@ def test_create_token():
 
 @allure.title("Booking - CreateBooking")
 @allure.description("Create Booking")
-def test_create_book():
+def create_book():
     url_base = "https://restful-booker.herokuapp.com"
     url_path = "/booking"
     book_url = url_base + url_path
@@ -81,14 +81,59 @@ def test_create_book():
     print(bookid)
     return bookid
 
+
+
+@allure.title("Booking - UpdateBooking")
+@allure.description("UpdateBooking")
+def test_update_booking():
+    try:
+        url_base = "https://restful-booker.herokuapp.com"
+        url_path = "/booking/"
+        param = create_book()
+        update_url = url_base + url_path + str(param)
+
+        head = {
+            "Content - Type": "application / json",
+            "Accept": "application / json",
+            "Cookie": "token =" + create_token()
+        }
+        paload = {
+            "firstname": "Nagarjuna",
+            "lastname": "Brown",
+            "totalprice": 1500,
+            "depositpaid": True,
+            "bookingdates": {
+                "checkin": "2024-05-01",
+                "checkout": "2024-05-10"
+            },
+            "additionalneeds": "Breakfast and coffee"
+        }
+        resp = requests.put(url=update_url, headers=head, json=paload)
+        jsonbody = resp.json()
+
+        status = resp.status_code
+        assert status == 200
+
+        status_msg = resp.ok
+        assert status_msg is True
+
+        print(resp)
+        print(status)
+        print(status_msg)
+    except Exception as e:
+        print(e)
+
+
 def test_delete_booking():
     try:
         url_base = "https://restful-booker.herokuapp.com"
         url_path = "/booking/"
-        param = test_create_book()
+        param = create_book()
         delete_url = url_base + url_path + str(param)
+
         head = {"Content-Type": "application/json",
-                "Cookie": "token=" + test_create_token()}
+                "Cookie": "token=" + create_token()}
+
         response = requests.delete(url=delete_url, headers=head)
         jsonbody = response.json()
 
@@ -103,4 +148,3 @@ def test_delete_booking():
         # print(status_msg)
     except Exception as e:
         print(e)
-

@@ -2,9 +2,11 @@ import pytest
 import requests
 import allure
 
+
 @allure.title("Token - Generate Token")
 @allure.description("Create new Token")
-def test_create_token():
+@pytest.fixture
+def create_token():
     base_url="https://restful-booker.herokuapp.com"
     path_url="/auth"
     token_url=base_url+path_url
@@ -34,7 +36,8 @@ def test_create_token():
 
 @allure.title("Booking - CreateBooking")
 @allure.description("Create Booking")
-def test_create_book():
+@pytest.fixture
+def create_book():
     url_base = "https://restful-booker.herokuapp.com"
     url_path = "/booking"
     book_url = url_base + url_path
@@ -80,27 +83,3 @@ def test_create_book():
     print(first_name)
     print(bookid)
     return bookid
-
-def test_delete_booking():
-    try:
-        url_base = "https://restful-booker.herokuapp.com"
-        url_path = "/booking/"
-        param = test_create_book()
-        delete_url = url_base + url_path + str(param)
-        head = {"Content-Type": "application/json",
-                "Cookie": "token=" + test_create_token()}
-        response = requests.delete(url=delete_url, headers=head)
-        jsonbody = response.json()
-
-        status=response.status_code
-        assert status == 201
-
-        # status_msg=response.ok
-        # assert status_msg == True
-
-        print(jsonbody)
-        print(status)
-        # print(status_msg)
-    except Exception as e:
-        print(e)
-
